@@ -5,7 +5,7 @@ const doc = {
     title: 'cse341 Blog API',
     description: 'This is a documentation for the Blog API'
   },
-  host: 'https://cse341-blog-api-service.onrender.com',
+  host: 'cse341-blog-api-service.onrender.com',
   schemes: ['https']
 };
 

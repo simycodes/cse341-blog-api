@@ -5,7 +5,7 @@
     "description": "This is a documentation for the Blog API",
     "version": "1.0.0"
   },
-  "host": "https://cse341-blog-api-service.onrender.com",
+  "host": "cse341-blog-api-service.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
