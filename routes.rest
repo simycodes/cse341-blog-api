@@ -1,0 +1,97 @@
+# LOCAL HOST
+
+# GET A SINGLE USER
+###
+http://localhost:3000/users/63dd05a9876d194ec8741694
+###
+http://localhost:3000/api-docs/#/
+
+# GET ALL USERS
+###
+GET http://localhost:3000/users/
+
+# REGISTER A USER
+###
+POST http://localhost:3000/users/
+Content-Type: application/json
+
+{
+    "firstName": "Mule",
+    "lastName": "kabwe",
+    "email": "mul@gmail.com",
+    "password": "123456",
+    "birthday":"18/05/19",
+    "gender": "male",
+    "favoriteQuote": ""
+}
+
+# GET A SINGLE POST
+###
+http://localhost:3000/posts/63dd099eccc50400c3882119
+
+# GET ALL POSTS
+###
+GET http://localhost:3000/posts/
+
+# CREATE A POST
+###
+POST http://localhost:3000/posts/
+Content-Type: application/json
+
+{
+    "title": "Simy The Coder",
+    "description": "Coding can be hard but you can do it!",
+    "postCategory": "Programming",
+    "userId": " "
+}
+
+
+# DISPLAY AND INTERACT WITH THE CONTACTS API DOCUMENTATION - USE BROWSER FOR THIS ROUTE
+
+
+#ON RENDER
+
+# GET A SINGLE USER
+###
+http://localhost:3000/users/63dd05a9876d194ec8741694
+###
+http://localhost:3000/api-docs/#/
+
+# GET ALL USERS
+###
+GET http://localhost:3000/users/
+
+# REGISTER A USER
+###
+POST http://localhost:3000/users/
+Content-Type: application/json
+
+{
+    "firstName": "Mule",
+    "lastName": "kabwe",
+    "email": "mul@gmail.com",
+    "password": "123456",
+    "birthday":"18/05/19",
+    "gender": "male",
+    "favoriteQuote": ""
+}
+
+# GET A SINGLE POST
+###
+http://localhost:3000/posts/63dd099eccc50400c3882119
+
+# GET ALL POSTS
+###
+GET http://localhost:3000/posts/
+
+# CREATE A POST
+###
+POST http://localhost:3000/posts/
+Content-Type: application/json
+
+{
+    "title": "Simy The Coder",
+    "description": "Coding can be hard but you can do it!",
+    "postCategory": "Programming",
+    "userId": " "
+}
