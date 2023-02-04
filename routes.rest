@@ -53,17 +53,17 @@ Content-Type: application/json
 
 # GET A SINGLE USER
 ###
-http://localhost:3000/users/63dd05a9876d194ec8741694
+https://cse341-blog-api-service.onrender.com/users/63dd05a9876d194ec8741694
 ###
-http://localhost:3000/api-docs/#/
+https://cse341-blog-api-service.onrender.com/api-docs/#/
 
 # GET ALL USERS
 ###
-GET http://localhost:3000/users/
+GET https://cse341-blog-api-service.onrender.com/users/
 
 # REGISTER A USER
 ###
-POST http://localhost:3000/users/
+POST https://cse341-blog-api-service.onrender.com/users/
 Content-Type: application/json
 
 {
@@ -78,15 +78,15 @@ Content-Type: application/json
 
 # GET A SINGLE POST
 ###
-http://localhost:3000/posts/63dd099eccc50400c3882119
+GET https://cse341-blog-api-service.onrender.com/posts/63dd099eccc50400c3882119
 
 # GET ALL POSTS
 ###
-GET http://localhost:3000/posts/
+GET https://cse341-blog-api-service.onrender.com/posts/
 
 # CREATE A POST
 ###
-POST http://localhost:3000/posts/
+POST https://cse341-blog-api-service.onrender.com/posts/
 Content-Type: application/json
 
 {
