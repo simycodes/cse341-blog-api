@@ -16,9 +16,9 @@ POST http://localhost:3000/users/
 Content-Type: application/json
 
 {
-    "firstName": "Mule",
-    "lastName": "kabwe",
-    "email": "mul@gmail.com",
+    "firstName": "valiadtot",
+    "lastName": "Mule",
+    "userEmail": "johnoioio@gmail.com",
     "password": "123456",
     "birthday":"18/05/19",
     "gender": "male",
@@ -27,35 +27,57 @@ Content-Type: application/json
 
 # GET A SINGLE POST
 ###
-http://localhost:3000/posts/63dd099eccc50400c3882119
+http://localhost:3000/posts/63e7b570e0e17c1f11a15758
 
 # GET ALL POSTS
 ###
-GET http://localhost:3000/posts/
+GET http://localhost:3000/posts
 
 # CREATE A POST
 ###
-POST http://localhost:3000/posts/
+POST http://localhost:3000/posts
 Content-Type: application/json
 
 {
-    "title": "Simy The Coder",
-    "description": "Coding can be hard but you can do it!",
-    "postCategory": "Programming",
-    "userId": " "
+    "title": "Shani apo-2!",
+    "description": "always working!",
+    "postCategory": "moving",
+    "userId": "63e7b249e0e17c1f11a1574a",
+    "userEmail": "simy@gmail.com"
 }
 
+# UPDATE A POST
+###
+PUT http://localhost:3000/posts/63e7f93deadc6b5ce85c7d44
+Content-Type: application/json
+
+{
+    "title": "Shani apo-2-updated!",
+    "description": "always working!",
+    "postCategory": "moving",
+    "userId": "63e7b249e0e17c1f11a1574a",
+    "userEmail": "simy@gmail.com"
+}
+
+# DELETE A POST
+###
+DELETE http://localhost:3000/posts/63e7f93deadc6b5ce85c7d44
+Content-Type: application/json
+
+{
+    "userId": "63e7b249e0e17c1f11a1574a"
+}
 
 # DISPLAY AND INTERACT WITH THE CONTACTS API DOCUMENTATION - USE BROWSER FOR THIS ROUTE
 
 
 #ON RENDER
+###
+https://cse341-blog-api-service.onrender.com/api-docs/#/
 
 # GET A SINGLE USER
 ###
 https://cse341-blog-api-service.onrender.com/users/63dd05a9876d194ec8741694
-###
-https://cse341-blog-api-service.onrender.com/api-docs/#/
 
 # GET ALL USERS
 ###
@@ -78,7 +100,7 @@ Content-Type: application/json
 
 # GET A SINGLE POST
 ###
-GET https://cse341-blog-api-service.onrender.com/posts/63dd099eccc50400c3882119
+GET https://cse341-blog-api-service.onrender.com/posts/63e7b570e0e17c1f11a1575812
 
 # GET ALL POSTS
 ###
@@ -90,8 +112,31 @@ POST https://cse341-blog-api-service.onrender.com/posts/
 Content-Type: application/json
 
 {
-    "title": "Simy The Coder",
-    "description": "Coding can be hard but you can do it!",
-    "postCategory": "Programming",
-    "userId": " "
+    "title": "Shani apo-2!",
+    "description": "always working!",
+    "postCategory": "moving",
+    "userId": "63e7b249e0e17c1f11a1574a",
+    "userEmail": "simy@gmail.com"
+}
+
+# UPDATE A POST
+###
+PUT https://cse341-blog-api-service.onrender.com/posts/63e7badf0009cab9335bfbf4
+Content-Type: application/json
+
+{
+    "title": "Shani apo-2-updated!",
+    "description": "always working!",
+    "postCategory": "moving",
+    "userId": "63e7b249e0e17c1f11a1574a",
+    "userEmail": "simy@gmail.com"
+}
+
+# DELETE A POST
+###
+DELETE https://cse341-blog-api-service.onrender.com/63e7b570e0e17c1f11a15758
+Content-Type: application/json
+
+{
+    "userId": "63e7b249e0e17c1f11a1574a"
 }

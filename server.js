@@ -17,6 +17,10 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   next();
 });
+// HANDLE ERROR EXCEPTIONS
+process.on('uncaughtException', (error, origin) => {
+  console.log(process.stderr.fd, `Caught exception: ${error}\n` + `Exception origin: ${origin}`);
+});
 
 // SERVER APP AND ALL APP ROUTES CONNECTION
 app.use('/', router);

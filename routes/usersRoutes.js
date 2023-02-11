@@ -1,5 +1,7 @@
 // IMPORTING PACKAGES-DEPENDENCIES FOR THE SERVER
 const express = require('express');
+// GET THE VALIDATION FUNCTIONS
+const { validateIncomingUserData } = require('../middleware/validate');
 
 // CREATING-DEFINING THE ROUTER VARIABLE
 const userRouter = express.Router();
@@ -13,6 +15,6 @@ userRouter.get('/:id', getSingleUser);
 userRouter.get('/', getAllUsers);
 
 // CREATE A USE
-userRouter.post('/', registerUser);
+userRouter.post('/', validateIncomingUserData, registerUser);
 
 module.exports = userRouter;

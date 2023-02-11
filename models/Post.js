@@ -4,8 +4,7 @@ const PostSchema = new mongoose.Schema(
   {
     title: {
       type: String,
-      required: true,
-      unique: true
+      required: true
     },
     description: {
       type: String,
@@ -16,6 +15,10 @@ const PostSchema = new mongoose.Schema(
       required: false
     },
     userId: {
+      type: String,
+      required: true
+    },
+    userEmail: {
       type: String,
       required: true
     }
