@@ -5,6 +5,7 @@ const router = express.Router();
 
 // GETTING ALL DIFFERENT APP ROUTES
 const homeRouter = require('./homeRoute.js');
+const authRouter = require('./authRoutes');
 const userRouter = require('./usersRoutes');
 const postRouter = require('./postsRoutes');
 const swaggerRouter = require('./swaggerConnectionRoutes');
@@ -12,6 +13,7 @@ const swaggerRouter = require('./swaggerConnectionRoutes');
 // LINKING ALL DIFFERENT APP ROUTES TO SINGLE MAIN ROUTE
 router.use('/', swaggerRouter);
 router.use('/', homeRouter);
+router.use('/auth', authRouter);
 router.use('/users', userRouter);
 router.use('/posts', postRouter);
 

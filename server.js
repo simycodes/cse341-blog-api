@@ -3,11 +3,16 @@ const express = require('express');
 const bodyParser = require('body-parser'); // help send post requests
 const router = require('./routes/');
 const connectToDatabase = require('./db/connectionToDatabase');
+const passport = require('passport');
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
 // CREATING THE SERVER APP VARIABLE
 const app = express();
 
 // IMPORTING THE .env FILE SO ITS VALUES CAN BE ACCESSED AND USED
 require('dotenv').config();
+// Passport config
+require('./middleware/passport')(passport); // PASSING IMPORTED password AS AN ARGUMENT
 // SETTING THE PORT
 const PORT = process.env.PORT || 3000;
 
@@ -21,6 +26,20 @@ app.use((req, res, next) => {
 process.on('uncaughtException', (error, origin) => {
   console.log(process.stderr.fd, `Caught exception: ${error}\n` + `Exception origin: ${origin}`);
 });
+
+// IMPLEMENTING BASIC SESSION - FOR AUTH GOOGLE LOG IN SUPPORT
+app.use(
+  session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({ mongoUrl: process.env.MONGO_URL })
+  })
+);
+
+// USING PASSPORT MIDDLEWARE
+app.use(passport.initialize());
+app.use(passport.session());
 
 // SERVER APP AND ALL APP ROUTES CONNECTION
 app.use('/', router);

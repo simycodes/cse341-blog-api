@@ -1,5 +1,6 @@
 // GET THE USER MODEL
 const User = require('../models/User');
+const UserOauth = require('../models/UserOauth');
 const ObjectId = require('mongodb').ObjectId;
 
 // GET AS SINGLE USER
@@ -8,7 +9,7 @@ const getSingleUser = async (req, res) => {
     res.status(400).json('Please provide a valid user id to get the user wanted.');
   }
   try {
-    const user = await User.findById(req.params.id);
+    const user = (await User.findById(req.params.id)) || (await UserOauth.findById(req.params.id));
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(user);
   } catch (error) {
@@ -20,8 +21,10 @@ const getSingleUser = async (req, res) => {
 const getAllUsers = async (req, res) => {
   try {
     const users = await User.find();
+    const users2 = await UserOauth.find();
+    let allUsers = [...users, ...users2];
     res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(users);
+    res.status(200).json(allUsers);
   } catch (error) {
     res.status(500).json(error);
   }

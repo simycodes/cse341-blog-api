@@ -1,8 +1,12 @@
 # LOCAL HOST
 
+# LOGIN VIA OUTH GOOGLE
+###
+POST http://localhost:3000/auth/google
+
 # GET A SINGLE USER
 ###
-http://localhost:3000/users/63dd05a9876d194ec8741694
+http://localhost:3000/users/63f0ab19fcf3d7109de25220
 ###
 http://localhost:3000/api-docs/#/
 
@@ -75,6 +79,10 @@ Content-Type: application/json
 ###
 https://cse341-blog-api-service.onrender.com/api-docs/#/
 
+# LOGIN VIA OUTH GOOGLE
+###
+POST https://cse341-blog-api-service.onrender.com/auth/google
+
 # GET A SINGLE USER
 ###
 https://cse341-blog-api-service.onrender.com/users/63dd05a9876d194ec8741694
@@ -82,6 +90,7 @@ https://cse341-blog-api-service.onrender.com/users/63dd05a9876d194ec8741694
 # GET ALL USERS
 ###
 GET https://cse341-blog-api-service.onrender.com/users/
+
 
 # REGISTER A USER
 ###
@@ -121,11 +130,11 @@ Content-Type: application/json
 
 # UPDATE A POST
 ###
-PUT https://cse341-blog-api-service.onrender.com/posts/63e7badf0009cab9335bfbf4
+PUT https://cse341-blog-api-service.onrender.com/posts/63e7b510e0e17c1f11a1574f
 Content-Type: application/json
 
 {
-    "title": "Shani apo-2-updated!",
+    "title": "Coding is hard!",
     "description": "always working!",
     "postCategory": "moving",
     "userId": "63e7b249e0e17c1f11a1574a",
