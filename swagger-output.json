@@ -72,13 +72,7 @@
                 "email": {
                   "example": "any"
                 },
-                "birthday": {
-                  "example": "any"
-                },
-                "gender": {
-                  "example": "any"
-                },
-                "favoriteQuote": {
+                "password": {
                   "example": "any"
                 }
               }
@@ -155,7 +149,13 @@
                 "email": {
                   "example": "any"
                 },
-                "location": {
+                "birthday": {
+                  "example": "any"
+                },
+                "gender": {
+                  "example": "any"
+                },
+                "favoriteQuote": {
                   "example": "any"
                 }
               }
