@@ -1,20 +1,19 @@
 // IMPORTING PACKAGES-DEPENDENCIES FOR THE SERVER
 const express = require('express');
-// GET THE VALIDATION FUNCTIONS
-const { validateIncomingUserData } = require('../middleware/validate');
-
+// GET THE USER AUTHENTICATION FUNCTION
+const { authenticateUser } = require('../middleware/authentication.js');
 // CREATING-DEFINING THE ROUTER VARIABLE
 const userRouter = express.Router();
 
-const { getSingleUser, getAllUsers, registerUser } = require('../controllers/usersController.js');
+const { getSingleUser, getAllUsers } = require('../controllers/usersController.js');
 
 // GET AS SINGLE USER
-userRouter.get('/:id', getSingleUser);
+userRouter.get('/:id', authenticateUser, getSingleUser);
 
 // GET ALL USERS
-userRouter.get('/', getAllUsers);
+userRouter.get('/', authenticateUser, getAllUsers);
 
-// CREATE A USE
-userRouter.post('/', validateIncomingUserData, registerUser);
+// CREATE A USER
+// userRouter.post('/', validateIncomingUserData, registerUser);
 
 module.exports = userRouter;

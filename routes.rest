@@ -1,49 +1,79 @@
 # LOCAL HOST
 
+# GET TO THE API DOCUMENTATION
+###
+http://localhost:3000/api-docs/#/
+
 # LOGIN VIA OUTH GOOGLE
 ###
 POST http://localhost:3000/auth/google
 
+# STANDARD LOGIN  
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "simymule@gmail.com",
+    "password":"123456"
+}
+
+# STANDARD USER REGISTRATION 
+###
+POST http://localhost:3000/auth/registerUser
+Content-Type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "Peter",
+    "email": "john@gmail.com",
+    "password": "123456"
+}
+
+# USER UPDATE 
+###
+PUT http://localhost:3000/auth/updateUser
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Y5MGRmMDQ3NDRjY2UxMGYzZDY2MmEiLCJpYXQiOjE2NzczNDMzMTksImV4cCI6MTY3NzQyOTcxOX0.x1lxi_u0OKKmyu6ahjJDw_fEiyBWI1iH0Ai5Uxz-9AY
+
+{
+    "firstName": "SimyLegend123!",
+    "lastName": "Mule",
+    "email": "simymule@gmail.com",
+    "password":"123456",
+    "birthday": "18-05-200",
+    "gender": "male",
+    "favoriteQuote": "When you have a dream, you have to grab it and never let go!",
+    "country": "Zambia"
+}
+
 # GET A SINGLE USER
 ###
-http://localhost:3000/users/63f0ab19fcf3d7109de25220
-###
-http://localhost:3000/api-docs/#/
+GET http://localhost:3000/users/63f7c17d4a02698a62efb544
+
 
 # GET ALL USERS
 ###
 GET http://localhost:3000/users/
-
-# REGISTER A USER
-###
-POST http://localhost:3000/users/
-Content-Type: application/json
-
-{
-    "firstName": "valiadtot",
-    "lastName": "Mule",
-    "userEmail": "johnoioio@gmail.com",
-    "password": "123456",
-    "birthday":"18/05/19",
-    "gender": "male",
-    "favoriteQuote": ""
-}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Y5MGRmMDQ3NDRjY2UxMGYzZDY2MmEiLCJpYXQiOjE2NzczNDMzMTksImV4cCI6MTY3NzQyOTcxOX0.x1lxi_u0OKKmyu6ahjJDw_fEiyBWI1iH0Ai5Uxz-9AYv
 
 # GET A SINGLE POST
 ###
-http://localhost:3000/posts/63e7b570e0e17c1f11a15758
+http://localhost:3000/posts/63fa3888467542993ff7f425
 
 # GET ALL POSTS
 ###
 GET http://localhost:3000/posts
 
+
 # CREATE A POST
 ###
 POST http://localhost:3000/posts
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Y5MGRmMDQ3NDRjY2UxMGYzZDY2MmEiLCJpYXQiOjE2NzczNDMzMTksImV4cCI6MTY3NzQyOTcxOX0.x1lxi_u0OKKmyu6ahjJDw_fEiyBWI1iH0Ai5Uxz-9AY
 
 {
-    "title": "Shani apo-2!",
+    "title": "Delete2!",
     "description": "always working!",
     "postCategory": "moving",
     "userId": "63e7b249e0e17c1f11a1574a",
@@ -52,11 +82,12 @@ Content-Type: application/json
 
 # UPDATE A POST
 ###
-PUT http://localhost:3000/posts/63e7f93deadc6b5ce85c7d44
+PUT http://localhost:3000/posts/63fa3888467542993ff7f425
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Y5MGRmMDQ3NDRjY2UxMGYzZDY2MmEiLCJpYXQiOjE2NzczNDMzMTksImV4cCI6MTY3NzQyOTcxOX0.x1lxi_u0OKKmyu6ahjJDw_fEiyBWI1iH0Ai5Uxz-9AY
 
 {
-    "title": "Shani apo-2-updated!",
+    "title": "Shani apo-3-YEAH!!",
     "description": "always working!",
     "postCategory": "moving",
     "userId": "63e7b249e0e17c1f11a1574a",
@@ -65,16 +96,15 @@ Content-Type: application/json
 
 # DELETE A POST
 ###
-DELETE http://localhost:3000/posts/63e7f93deadc6b5ce85c7d44
+DELETE http://localhost:3000/posts/63e7b55ee0e17c1f11a15754
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Y5MGRmMDQ3NDRjY2UxMGYzZDY2MmEiLCJpYXQiOjE2NzczNDMzMTksImV4cCI6MTY3NzQyOTcxOX0.x1lxi_u0OKKmyu6ahjJDw_fEiyBWI1iH0Ai5Uxz-9AY
 
 {
     "userId": "63e7b249e0e17c1f11a1574a"
 }
 
 # DISPLAY AND INTERACT WITH THE CONTACTS API DOCUMENTATION - USE BROWSER FOR THIS ROUTE
-
-
 #ON RENDER
 ###
 https://cse341-blog-api-service.onrender.com/api-docs/#/
@@ -83,29 +113,54 @@ https://cse341-blog-api-service.onrender.com/api-docs/#/
 ###
 POST https://cse341-blog-api-service.onrender.com/auth/google
 
+# STANDARD LOGIN  
+###
+POST https://cse341-blog-api-service.onrender.com/auth/login
+Content-Type: application/json
+
+{
+    "email": "simymule@gmail.com",
+    "password":"123456"
+}
+
+# STANDARD USER REGISTRATION 
+###
+POST https://cse341-blog-api-service.onrender.com/auth/registerUser
+Content-Type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "Peter",
+    "email": "john@gmail.com",
+    "password": "123456"
+}
+
+# USER UPDATE 
+###
+PUT https://cse341-blog-api-service.onrender.com/auth/updateUser
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Y5MGRmMDQ3NDRjY2UxMGYzZDY2MmEiLCJpYXQiOjE2NzczNDMzMTksImV4cCI6MTY3NzQyOTcxOX0.x1lxi_u0OKKmyu6ahjJDw_fEiyBWI1iH0Ai5Uxz-9AY
+
+{
+    "firstName": "SimyLegend!",
+    "lastName": "Mule",
+    "email": "simymule@gmail.com",
+    "password":"123456",
+    "birthday": "18-05-200",
+    "gender": "male",
+    "favoriteQuote": "When you have a dream, you have to grab it and never let go!",
+    "country": "Zambia"
+}
+
 # GET A SINGLE USER
 ###
 https://cse341-blog-api-service.onrender.com/users/63dd05a9876d194ec8741694
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Y5MGRmMDQ3NDRjY2UxMGYzZDY2MmEiLCJpYXQiOjE2NzczNDMzMTksImV4cCI6MTY3NzQyOTcxOX0.x1lxi_u0OKKmyu6ahjJDw_fEiyBWI1iH0Ai5Uxz-9AY
 
 # GET ALL USERS
 ###
 GET https://cse341-blog-api-service.onrender.com/users/
-
-
-# REGISTER A USER
-###
-POST https://cse341-blog-api-service.onrender.com/users/
-Content-Type: application/json
-
-{
-    "firstName": "Mule",
-    "lastName": "kabwe",
-    "email": "mul@gmail.com",
-    "password": "123456",
-    "birthday":"18/05/19",
-    "gender": "male",
-    "favoriteQuote": ""
-}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Y5MGRmMDQ3NDRjY2UxMGYzZDY2MmEiLCJpYXQiOjE2NzczNDMzMTksImV4cCI6MTY3NzQyOTcxOX0.x1lxi_u0OKKmyu6ahjJDw_fEiyBWI1iH0Ai5Uxz-9AY
 
 # GET A SINGLE POST
 ###
@@ -119,6 +174,7 @@ GET https://cse341-blog-api-service.onrender.com/posts/
 ###
 POST https://cse341-blog-api-service.onrender.com/posts/
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Y5MGRmMDQ3NDRjY2UxMGYzZDY2MmEiLCJpYXQiOjE2NzczNDMzMTksImV4cCI6MTY3NzQyOTcxOX0.x1lxi_u0OKKmyu6ahjJDw_fEiyBWI1iH0Ai5Uxz-9AY
 
 {
     "title": "Shani apo-2!",
@@ -132,6 +188,7 @@ Content-Type: application/json
 ###
 PUT https://cse341-blog-api-service.onrender.com/posts/63e7b510e0e17c1f11a1574f
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Y5MGRmMDQ3NDRjY2UxMGYzZDY2MmEiLCJpYXQiOjE2NzczNDMzMTksImV4cCI6MTY3NzQyOTcxOX0.x1lxi_u0OKKmyu6ahjJDw_fEiyBWI1iH0Ai5Uxz-9AY
 
 {
     "title": "Coding is hard!",
@@ -145,6 +202,7 @@ Content-Type: application/json
 ###
 DELETE https://cse341-blog-api-service.onrender.com/63e7b570e0e17c1f11a15758
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Y5MGRmMDQ3NDRjY2UxMGYzZDY2MmEiLCJpYXQiOjE2NzczNDMzMTksImV4cCI6MTY3NzQyOTcxOX0.x1lxi_u0OKKmyu6ahjJDw_fEiyBWI1iH0Ai5Uxz-9AY
 
 {
     "userId": "63e7b249e0e17c1f11a1574a"

@@ -13,14 +13,14 @@
   "paths": {
     "/api-docs": {
       "get": {
-        "description": "",
+        "description": "This is the swagger documentation route",
         "parameters": [],
         "responses": {}
       }
     },
     "/": {
       "get": {
-        "description": "",
+        "description": "This the home route for the blog API. Indicates when the api is working okay.",
         "parameters": [],
         "responses": {
           "200": {
@@ -32,39 +32,16 @@
         }
       }
     },
-    "/users/{id}": {
+    "/auth/google": {
       "get": {
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
+        "description": "This is a OAuth login route using google a account",
+        "parameters": [],
+        "responses": {}
       }
     },
-    "/users/": {
+    "/auth/google/callback": {
       "get": {
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "description": "This is a call back route that leads to google authentication",
         "parameters": [],
         "responses": {
           "200": {
@@ -74,9 +51,11 @@
             "description": "Internal Server Error"
           }
         }
-      },
+      }
+    },
+    "/auth/registerUser": {
       "post": {
-        "description": "",
+        "description": "This is the user registration route",
         "parameters": [
           {
             "name": "body",
@@ -95,23 +74,14 @@
                 },
                 "password": {
                   "example": "any"
-                },
-                "birthday": {
-                  "example": "any"
-                },
-                "gender": {
-                  "example": "any"
-                },
-                "favoriteQuote": {
-                  "example": "any"
                 }
               }
             }
           }
         ],
         "responses": {
-          "201": {
-            "description": "Created"
+          "200": {
+            "description": "OK"
           },
           "412": {
             "description": "Precondition Failed"
@@ -122,9 +92,150 @@
         }
       }
     },
+    "/auth/login": {
+      "post": {
+        "description": "This is the user login route",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/auth/updateUser": {
+      "put": {
+        "description": "This is the user update route",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "location": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "get": {
+        "description": "This route gets a single user",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/users/": {
+      "get": {
+        "description": "This route gets all the users",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
     "/posts/{id}": {
       "get": {
-        "description": "",
+        "description": "This route a single post",
         "produces": [
           "application/json"
         ],
@@ -149,7 +260,7 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "This route update a single post",
         "parameters": [
           {
             "name": "id",
@@ -163,7 +274,7 @@
             "schema": {
               "type": "object",
               "properties": {
-                "title": {
+                "userId": {
                   "example": "any"
                 },
                 "description": {
@@ -172,14 +283,16 @@
                 "postCategory": {
                   "example": "any"
                 },
-                "userId": {
-                  "example": "any"
-                },
                 "userEmail": {
                   "example": "any"
                 }
               }
             }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
           }
         ],
         "responses": {
@@ -201,12 +314,17 @@
         }
       },
       "delete": {
-        "description": "",
+        "description": "This route deletes a post",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
             "type": "string"
           },
           {
@@ -240,7 +358,7 @@
     },
     "/posts/": {
       "get": {
-        "description": "",
+        "description": "This route gets all the posts",
         "produces": [
           "application/json"
         ],
@@ -258,30 +376,20 @@
         "description": "",
         "parameters": [
           {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "title": {
-                  "example": "any"
-                },
-                "description": {
-                  "example": "any"
-                },
-                "postCategory": {
-                  "example": "any"
-                },
-                "userId": {
-                  "example": "any"
-                }
-              }
-            }
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
           }
         ],
         "responses": {
+          "200": {
+            "description": "OK"
+          },
           "201": {
             "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
           },
           "412": {
             "description": "Precondition Failed"
