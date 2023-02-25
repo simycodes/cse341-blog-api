@@ -14,7 +14,7 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-    "email": "simymule@gmail.com",
+    "email": "bwalya1234@gmail.com",
     "password":"123456"
 }
 
@@ -24,38 +24,38 @@ POST http://localhost:3000/auth/registerUser
 Content-Type: application/json
 
 {
-    "firstName": "John",
-    "lastName": "Peter",
-    "email": "john@gmail.com",
-    "password": "123456"
+    "firstName": "Bwalya",
+    "lastName": "Mutondo",
+    "email": "bwalya1234@gmail.com",
+    "password":"123456"
 }
 
 # USER UPDATE 
 ###
 PUT http://localhost:3000/auth/updateUser
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Y5MGRmMDQ3NDRjY2UxMGYzZDY2MmEiLCJpYXQiOjE2NzczNDMzMTksImV4cCI6MTY3NzQyOTcxOX0.x1lxi_u0OKKmyu6ahjJDw_fEiyBWI1iH0Ai5Uxz-9AY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZhNTZkMmZiOGJmNzVlNmJjZDQxNzgiLCJpYXQiOjE2NzczNTEyMTUsImV4cCI6MTY3NzQzNzYxNX0.mPbbRhJTCbeuK9Yb_g9Ay9KfFLwzf9kOxKqy0wUFNUA
 
 {
-    "firstName": "SimyLegend123!",
-    "lastName": "Mule",
-    "email": "simymule@gmail.com",
+    "firstName": "Bwalya",
+    "lastName": "Mutondo",
+    "email": "bwalya1234@gmail.com",
     "password":"123456",
     "birthday": "18-05-200",
     "gender": "male",
-    "favoriteQuote": "When you have a dream, you have to grab it and never let go!",
+    "favoriteQuote": "shani apo!",
     "country": "Zambia"
 }
 
 # GET A SINGLE USER
 ###
 GET http://localhost:3000/users/63f7c17d4a02698a62efb544
-
+Authorization: Bearer 
 
 # GET ALL USERS
 ###
 GET http://localhost:3000/users/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Y5MGRmMDQ3NDRjY2UxMGYzZDY2MmEiLCJpYXQiOjE2NzczNDMzMTksImV4cCI6MTY3NzQyOTcxOX0.x1lxi_u0OKKmyu6ahjJDw_fEiyBWI1iH0Ai5Uxz-9AYv
+Authorization: Bearer 
 
 # GET A SINGLE POST
 ###
@@ -142,13 +142,13 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Y5MGRmMDQ3NDRjY2UxMGYzZDY2MmEiLCJpYXQiOjE2NzczNDMzMTksImV4cCI6MTY3NzQyOTcxOX0.x1lxi_u0OKKmyu6ahjJDw_fEiyBWI1iH0Ai5Uxz-9AY
 
 {
-    "firstName": "SimyLegend!",
-    "lastName": "Mule",
-    "email": "simymule@gmail.com",
+    "firstName": "Bwalya",
+    "lastName": "Mutondo",
+    "email": "bwalya1234@gmail.com",
     "password":"123456",
     "birthday": "18-05-200",
     "gender": "male",
-    "favoriteQuote": "When you have a dream, you have to grab it and never let go!",
+    "favoriteQuote": "shani apo!",
     "country": "Zambia"
 }
 

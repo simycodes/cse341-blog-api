@@ -80,14 +80,18 @@ const updateUser = async (req, res) => {
     console.log('Shani apo!');
     console.log(req.user); // THIS NOW HOLDS USER ID - AFTER AUTHENTICATION WITH jwt.verify() - { userId: '63e69ee471eea96576349459' }
     // res.send("update user working");
-    const { firstName, lastName, email, location } = req.body;
+    console.log(req.body);
+    const { firstName, lastName, email, birthday, gender, favoriteQuote, country } = req.body;
     // FIND THE USER IN THE DB USING HIS USER ID
     const user = await User.findOne({ _id: req.user.userId });
     // MAKE THE UPDATE TO THE USER DETAILS WITH NEW INCOMING DATA
     user.firstName = firstName;
     user.lastName = lastName;
     user.email = email;
-    user.location = location;
+    user.birthday = birthday;
+    user.gender = gender;
+    user.favoriteQuote = favoriteQuote;
+    user.location = country;
     // UPDATE THE NEW USER DETAILS - user.save(); CALLS UserSchema.pre('save',) middleware
     // that may cause some update errors, hence use of if(!this.isModified('password')) expression in the middleware
     await user.save();

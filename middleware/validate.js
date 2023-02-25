@@ -68,11 +68,11 @@ const validateIncomingUserDataForUpdatingUser = (req, res, next) => {
     firstName: 'required|string',
     lastName: 'required|string',
     email: 'required|email',
-    password: 'required|string',
-    birthday: 'required|string',
-    gender: 'required|string',
-    favoriteQuote: 'required|string',
-    country: 'required|string'
+    password: 'string',
+    birthday: 'string',
+    gender: 'string',
+    favoriteQuote: 'string',
+    country: 'string'
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
