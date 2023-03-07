@@ -14,7 +14,7 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-    "email": "bwalya1234@gmail.com",
+    "email": "simycodes@gmail.com",
     "password":"123456"
 }
 
@@ -24,9 +24,9 @@ POST http://localhost:3000/auth/registerUser
 Content-Type: application/json
 
 {
-    "firstName": "Bwalya",
-    "lastName": "Mutondo",
-    "email": "bwalya12345@gmail.com",
+    "firstName": "Simon",
+    "lastName": "Mule",
+    "email": "simycodes@gmail.com",
     "password":"123456"
 }
 
@@ -34,13 +34,12 @@ Content-Type: application/json
 ###
 PUT http://localhost:3000/auth/updateUser
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZhNTZkMmZiOGJmNzVlNmJjZDQxNzgiLCJpYXQiOjE2NzczNTEyMTUsImV4cCI6MTY3NzQzNzYxNX0.mPbbRhJTCbeuK9Yb_g9Ay9KfFLwzf9kOxKqy0wUFNUA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZhNjIyMjc3Y2JjYjc0YmQ4YTk1MTYiLCJpYXQiOjE2NzczNTM1NDEsImV4cCI6MTY3NzQzOTk0MX0.UtiboUZGL6ROW6Mutgxg_F9jI6cwV4ToD9Ok0rdlOP4
 
 {
-    "firstName": "Bwalya",
-    "lastName": "Mutondo",
-    "email": "bwalya1234@gmail.com",
-    "password":"123456",
+    "firstName": "Simy",
+    "lastName": "Mule",
+    "email": "simycodes@gmail.com",
     "birthday": "18-05-200",
     "gender": "male",
     "favoriteQuote": "shani apo!",
@@ -59,7 +58,7 @@ Authorization: Bearer
 
 # GET A SINGLE POST
 ###
-http://localhost:3000/posts/63fa3888467542993ff7f425
+http://localhost:3000/posts/63fa37e5467542993ff7f41e
 
 # GET ALL POSTS
 ###
