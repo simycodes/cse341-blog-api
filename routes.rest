@@ -1,87 +1,151 @@
 # LOCAL HOST
 
-# GET A SINGLE CONTACT
+# LOGIN VIA OUTH GOOGLE
 ###
-http://localhost:3000/contacts/displaySingleContact/63cc44ce7897764536a430c9
+POST http://localhost:3000/auth/google
 
-# GET ALL CONTACTS
+# GET A SINGLE USER
 ###
-GET http://localhost:3000/contacts/displayAllContacts
+http://localhost:3000/users/63f0ab19fcf3d7109de25220
+###
+http://localhost:3000/api-docs/#/
 
-# CREATE A CONTACT
+# GET ALL USERS
 ###
-POST http://localhost:3000/contacts/createContact
+GET http://localhost:3000/users/
+
+# REGISTER A USER
+###
+POST http://localhost:3000/users/
 Content-Type: application/json
 
 {
-    "firstName":"Mulenga",
-    "lastName": "kabwe",
-    "email": "mk@gmail.com",
-    "favoriteColor":"green",
-    "birthday":"18/05/19"
+    "firstName": "valiadtot",
+    "lastName": "Mule",
+    "userEmail": "johnoioio@gmail.com",
+    "password": "123456",
+    "birthday":"18/05/19",
+    "gender": "male",
+    "favoriteQuote": ""
 }
 
-# UPDATE A CONTACT
+# GET A SINGLE POST
 ###
-PUT http://localhost:3000/contacts/updateContact/63cc44ce7897764536a430c9
+http://localhost:3000/posts/63e7b570e0e17c1f11a15758
+
+# GET ALL POSTS
+###
+GET http://localhost:3000/posts
+
+# CREATE A POST
+###
+POST http://localhost:3000/posts
 Content-Type: application/json
 
 {
-    "firstName":"Simon",
-    "lastName": "Bwalya",
-    "email": "mk@gmail.com",
-    "favoriteColor":"green",
-    "birthday":"18/05/19"
+    "title": "Shani apo-2!",
+    "description": "always working!",
+    "postCategory": "moving",
+    "userId": "63e7b249e0e17c1f11a1574a",
+    "userEmail": "simy@gmail.com"
 }
 
-# DELETE A CONTACT
+# UPDATE A POST
 ###
-DELETE http://localhost:3000/contacts/deleteContact/63cc433106787b710a02102e
+PUT http://localhost:3000/posts/63e7f93deadc6b5ce85c7d44
+Content-Type: application/json
+
+{
+    "title": "Shani apo-2-updated!",
+    "description": "always working!",
+    "postCategory": "moving",
+    "userId": "63e7b249e0e17c1f11a1574a",
+    "userEmail": "simy@gmail.com"
+}
+
+# DELETE A POST
+###
+DELETE http://localhost:3000/posts/63e7f93deadc6b5ce85c7d44
+Content-Type: application/json
+
+{
+    "userId": "63e7b249e0e17c1f11a1574a"
+}
 
 # DISPLAY AND INTERACT WITH THE CONTACTS API DOCUMENTATION - USE BROWSER FOR THIS ROUTE
-###
-DELETE http://localhost:3000/api-docs/#/
 
 
 #ON RENDER
-
-# GET A SINGLE CONTACT
 ###
-https://cse341-assignment-services.onrender.com/contacts/displaySingleContact/63bea48fe73bda6cf7e628bd
+https://cse341-blog-api-service.onrender.com/api-docs/#/
 
-# GET ALL CONTACTS
+# LOGIN VIA OUTH GOOGLE
 ###
-https://cse341-assignment-services.onrender.com/contacts/displayAllContacts
+POST https://cse341-blog-api-service.onrender.com/auth/google
+
+# GET A SINGLE USER
+###
+https://cse341-blog-api-service.onrender.com/users/63dd05a9876d194ec8741694
+
+# GET ALL USERS
+###
+GET https://cse341-blog-api-service.onrender.com/users/
 
 
-### CREATE A CONTACT
-POST https://cse341-assignment-services.onrender.com/contacts/createContact
-content-type: application/json
+# REGISTER A USER
+###
+POST https://cse341-blog-api-service.onrender.com/users/
+Content-Type: application/json
 
 {
-    "firstName":"Chewe",
-    "lastName": "Mwana",
-    "email": "mwanaM@gmail.com",
-    "favoriteColor":"red",
-    "birthday":"18/05/19"
+    "firstName": "Mule",
+    "lastName": "kabwe",
+    "email": "mul@gmail.com",
+    "password": "123456",
+    "birthday":"18/05/19",
+    "gender": "male",
+    "favoriteQuote": ""
 }
 
+# GET A SINGLE POST
+###
+GET https://cse341-blog-api-service.onrender.com/posts/63e7b570e0e17c1f11a1575812
 
-### UPDATE A CONTACT
-PUT https://cse341-assignment-services.onrender.com/contacts/updateContact/63bea4e7dc5d2d70bb5120b6
-content-type: application/json
+# GET ALL POSTS
+###
+GET https://cse341-blog-api-service.onrender.com/posts/
+
+# CREATE A POST
+###
+POST https://cse341-blog-api-service.onrender.com/posts/
+Content-Type: application/json
 
 {
-    "firstName":"Angel",
-    "lastName": "Banda",
-    "email": "mulemule@gmail.com",
-    "favoriteColor":"red",
-    "birthday":"18/05/19"
+    "title": "Shani apo-2!",
+    "description": "always working!",
+    "postCategory": "moving",
+    "userId": "63e7b249e0e17c1f11a1574a",
+    "userEmail": "simy@gmail.com"
 }
 
-### DELETE A CONTACT
-DELETE https://cse341-assignment-services.onrender.com/contacts/deleteContact/63cc445ef88343cbce9c6797
-
-# DISPLAY AND INTERACT WITH THE CONTACTS API DOCUMENTATION - USE BROWSER FOR THIS ROUTE
+# UPDATE A POST
 ###
-https://cse341-assignment-services.onrender.com/api-docs/
+PUT https://cse341-blog-api-service.onrender.com/posts/63e7b510e0e17c1f11a1574f
+Content-Type: application/json
+
+{
+    "title": "Coding is hard!",
+    "description": "always working!",
+    "postCategory": "moving",
+    "userId": "63e7b249e0e17c1f11a1574a",
+    "userEmail": "simy@gmail.com"
+}
+
+# DELETE A POST
+###
+DELETE https://cse341-blog-api-service.onrender.com/63e7b570e0e17c1f11a15758
+Content-Type: application/json
+
+{
+    "userId": "63e7b249e0e17c1f11a1574a"
+}
